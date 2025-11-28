@@ -4,13 +4,13 @@ A Python implementation of the seat allocation algorithm for Marche Regional Cou
 
 ## 📋 Overview
 
-This project simulates the complex seat distribution process for the Marche Regional Council, implementing the most current version of the electoral law with all amendments as applied in the 2025 election cycle. The complete legal text is included in this repository as `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`.
+This project simulates the complex seat distribution process for the Marche Regional Council, implementing the most current version of the electoral law with all amendments as applied in the 2025 election cycle. The complete legal text is included in this repository as `LR_27_2004_Marche_Electoral_Law.pdf`.
 
 ### Key Legal Framework
 
 - **Base Law**: L.R. 27/2004, Articles 18-19 (Marche Regional Electoral Law)
 - **Version**: As amended and applied for the 2025 regional election
-- **Full Text**: Available in `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
+- **Full Text**: Available in `LR_27_2004_Marche_Electoral_Law.pdf`
 - **Implementation**: Strict compliance with legal provisions as written
 
 ### Electoral Mechanisms Implemented
@@ -35,13 +35,13 @@ This project simulates the complex seat distribution process for the Marche Regi
 The simulator requires several CSV files:
 
 ### Required Files
-- `votes_marche_*_all_provinces.csv` - Election results by province, list, and coalition
+- `votes_marche_2025_all_provinces.csv` - Sample election data by province, list, and coalition
 - `seats_per_province.csv` - Seat allocation per province (must total 30)
 - `params.csv` - Electoral parameters (thresholds, bonuses)
 
 ### Input Data Format
 
-**votes_marche_*_all_provinces.csv:**
+**votes_marche_2025_all_provinces.csv:**
 ```csv
 province,list,coalition,president,votes
 Ancona,Partito Democratico,Centrosinistra,Matteo Ricci,49000
@@ -75,6 +75,7 @@ python ERM.py
 ```
 
 ### Output Files Generated
+The simulator generates the following output files:
 - `provincial_results.csv` - Detailed allocation by province and list
 - `coalition_seats.csv` - Seats per coalition
 - `group_seats.csv` - Seats per list/group
@@ -137,20 +138,23 @@ Based on **Legge Regionale 27/2004** of Regione Marche (as amended for 2025):
 - **Art. 19, comma 5-6**: Group caps and residual seat ranking
 - **Art. 19, comma 7**: Reserved seat for runner-up presidential candidate
 
-**Complete Legal Text**: `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
+**Complete Legal Text**: `LR_27_2004_Marche_Electoral_Law.pdf`
 
 ## 🛠️ Development Tools
 
-### Debug Scripts
+The `tools/` directory contains validation and debugging utilities:
+
+### Essential Validation Tools
 - `debug_allocation.py` - Overall allocation verification
+- `check_quota.py` - Provincial quota validation
+- `test_step_by_step.py` - Function-by-function testing
+
+### Specific Analysis Tools
 - `debug_coalitions.py` - Coalition admission analysis
+- `debug_bonus.py` - Minimum bonus system verification
 - `debug_residuals.py` - Residual allocation tracing
 - `debug_fermo.py` - Province-specific allocation debugging
-
-### Validation Scripts
-- `test_step_by_step.py` - Function-by-function testing
-- `check_quota.py` - Provincial quota validation
-- Various `test_*.py` files for specific scenarios
+- `debug_runnerup.py` - Runner-up seat analysis
 
 ## 📋 Requirements
 
@@ -160,33 +164,44 @@ Based on **Legge Regionale 27/2004** of Regione Marche (as amended for 2025):
 
 Install dependencies:
 ```bash
-pip install pandas reportlab
+pip install -r requirements.txt
 ```
 
 ## 🎯 Example Results
 
-For the 2025 simulation:
-- **Total Seats**: 30 (as required)
+For the 2025 simulation data:
+- **Total Seats**: 30 (as required by law)
 - **Ancona**: 9 seats ✓
 - **Ascoli Piceno**: 4 seats ✓  
 - **Fermo**: 4 seats ✓
 - **Macerata**: 6 seats ✓
 - **Pesaro e Urbino**: 7 seats ✓
 
-## 📊 Output Analysis
+## 📊 Project Structure
 
-### Provincial Reports
-Each province shows:
-- **Quota calculation**: `admitted_votes ÷ (seats + 1)`
-- **Integer seats**: Direct allocation from quotas
-- **Residual percentages**: `(votes - integer_quota) ÷ total_votes × 100`
-- **Regional ranking**: Position in regional residual hierarchy
-- **Final allocation**: Integer + residual seats
-
-### Coalition Analysis
-- Vote percentages and seat proportions
-- Bonus system application
-- D'Hondt allocation results
+```
+marche-regional-election-simulator/
+├── README.md                          # Project documentation
+├── LICENSE                            # MIT License
+├── requirements.txt                   # Python dependencies
+├── CHANGELOG.md                       # Version history
+├── CONTRIBUTING.md                    # Contribution guidelines
+├── ERM.py                            # Main simulator script
+├── LR_27_2004_Marche_Electoral_Law.pdf # Complete legal text
+├── params.csv                        # Electoral parameters
+├── seats_per_province.csv            # Provincial seat allocation
+├── votes_marche_2025_all_provinces.csv # Sample election data
+├── docs/                             # Additional documentation
+│   ├── API_REFERENCE.md              # Function documentation
+│   └── LEGAL_IMPLEMENTATION.md       # Legal compliance details
+├── examples/                         # Usage examples
+│   ├── basic_usage.py               # Simple usage demonstration
+│   └── analysis_example.py          # Advanced analysis tools
+└── tools/                           # Validation and debugging
+    ├── debug_allocation.py          # Overall verification
+    ├── check_quota.py               # Quota validation
+    └── [other debug tools]          # Specific analysis utilities
+```
 
 ## 🤝 Contributing
 
@@ -215,6 +230,6 @@ Developed by **Valerio Ficcadenti** at London South Bank University for academic
 ## 🔗 Legal Documentation
 
 The complete legal framework including all amendments applied in 2025 is available in:
-- `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
+- `LR_27_2004_Marche_Electoral_Law.pdf`
 
 This ensures full transparency and academic rigor in the implementation of the electoral algorithm.
