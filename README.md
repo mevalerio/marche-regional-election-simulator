@@ -1,10 +1,19 @@
 # Marche Regional Election Seat Allocation Simulator
 
-A Python implementation of the seat allocation algorithm for Marche Regional Council elections, following the electoral law L.R. 27/2004 (Articles 18-19).
+A Python implementation of the seat allocation algorithm for Marche Regional Council elections, following the electoral law **L.R. 27/2004 (Articles 18-19) as amended and applied in the 2025 regional election**.
 
 ## 📋 Overview
 
-This project simulates the complex seat distribution process for the Marche Regional Council, implementing:
+This project simulates the complex seat distribution process for the Marche Regional Council, implementing the most current version of the electoral law with all amendments as applied in the 2025 election cycle. The complete legal text is included in this repository as `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`.
+
+### Key Legal Framework
+
+- **Base Law**: L.R. 27/2004, Articles 18-19 (Marche Regional Electoral Law)
+- **Version**: As amended and applied for the 2025 regional election
+- **Full Text**: Available in `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
+- **Implementation**: Strict compliance with legal provisions as written
+
+### Electoral Mechanisms Implemented
 
 - **Coalition admission thresholds** (Art. 18, comma 5-6)
 - **D'Hondt proportional allocation** with minimum bonus system (Art. 19, comma 1-2)
@@ -14,11 +23,12 @@ This project simulates the complex seat distribution process for the Marche Regi
 
 ## 🎯 Key Features
 
-- **Legal Compliance**: Strict implementation of L.R. 27/2004 electoral provisions
+- **Legal Compliance**: Strict implementation of L.R. 27/2004 as amended for 2025
 - **Provincial Analysis**: Detailed seat allocation by province with quota calculations
 - **Regional Rest Ranking**: Complete residual percentage ranking across all provinces
 - **Multiple Output Formats**: CSV data, Markdown reports, and PDF documentation
 - **Comprehensive Validation**: Debug tools and verification scripts
+- **Academic Rigor**: Full legal documentation and mathematical formulations
 
 ## 📊 Input Data
 
@@ -118,7 +128,7 @@ python ERM.py
 
 ## 📝 Legal References
 
-Based on **Legge Regionale 27/2004** of Regione Marche:
+Based on **Legge Regionale 27/2004** of Regione Marche (as amended for 2025):
 
 - **Art. 18, comma 5-6**: Coalition and list admission thresholds
 - **Art. 19, comma 1-2**: D'Hondt method and minimum bonus system
@@ -126,6 +136,8 @@ Based on **Legge Regionale 27/2004** of Regione Marche:
 - **Art. 19, comma 4**: Provincial seat allocation using quotas
 - **Art. 19, comma 5-6**: Group caps and residual seat ranking
 - **Art. 19, comma 7**: Reserved seat for runner-up presidential candidate
+
+**Complete Legal Text**: `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
 
 ## 🛠️ Development Tools
 
@@ -178,20 +190,20 @@ Each province shows:
 
 ## 🤝 Contributing
 
-This implementation follows the legal text precisely. For improvements or bug reports:
+This implementation follows the legal text precisely as amended for 2025. For improvements or bug reports:
 
-1. Verify against L.R. 27/2004 provisions
+1. Verify against L.R. 27/2004 provisions (see included PDF)
 2. Test with various electoral scenarios
 3. Ensure provincial seat totals remain correct
 4. Validate against official results when available
 
 ## 📄 License
 
-This project is for educational and research purposes, implementing public electoral law. 
+This project is for educational and research purposes, implementing public electoral law. See LICENSE for details.
 
 ## ✨ Acknowledgments
 
-Developed by **Valerio Ficcadenti** at London South Bank University for academic research on Italian regional electoral systems, specifically analyzing the Marche regional council seat allocation mechanism.
+Developed by **Valerio Ficcadenti** at London South Bank University for academic research on Italian regional electoral systems, specifically analyzing the Marche regional council seat allocation mechanism as applied in the 2025 election.
 
 ## 📞 Contact
 
@@ -199,3 +211,10 @@ Developed by **Valerio Ficcadenti** at London South Bank University for academic
 - **Institution**: London South Bank University  
 - **Email**: ficcadv2@lsbu.ac.uk
 - **Research Focus**: Italian electoral systems and regional governance
+
+## 🔗 Legal Documentation
+
+The complete legal framework including all amendments applied in 2025 is available in:
+- `Leggi e regolamenti regionali - Consiglio regionale delle Marche (1).pdf`
+
+This ensures full transparency and academic rigor in the implementation of the electoral algorithm.
